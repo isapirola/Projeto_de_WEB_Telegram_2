@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 
 export function authMiddleware(req, res, next){
-    const authHeader = req.headers.authorization
+    const authHeader = req.session.token
 
     if(!authHeader){
         return res.status(401).send({ error: 'No token provided' })

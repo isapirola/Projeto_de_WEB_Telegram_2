@@ -1,4 +1,5 @@
 import express from "express";
+import cookieSession from "cookie-session";
 import { router as authRouter } from "./controllers/authController.js";
 import { router as projectRouter } from "./controllers/projectController.js";
 
@@ -9,6 +10,12 @@ app.use(express.urlencoded({ extends: false }))
 
 app.use('/auth', authRouter)
 app.use('/projects', projectRouter)
+
+app.use(cookieSession({
+  name: 'session',
+  secret: process.env.COOKIE_SECRET,
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}))
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

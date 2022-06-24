@@ -4,6 +4,12 @@ import jwt from "jsonwebtoken";
 
 export const router = new express.Router()
 
+function generateToken(params = {}) {
+    return jwt.sign(params, process.env.JWT_SECRET, {
+        expiresIn: '24h'
+    })
+}
+
 router.post('/register', async (req, res) => {
     const { email } = req.body
 
@@ -14,7 +20,8 @@ router.post('/register', async (req, res) => {
 
         const user = await User.create(req.body);
 
-        return res.send({ user })
+        return res.send({ user, token: generateToken({ id: user.id }) })
+
     } catch (err) {
         return res.status(400).send({ error: 'Registration failed' })
     }
@@ -34,9 +41,7 @@ router.post('/login', async (req, res) => {
     } 
     user.password = undefined
 
-    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-        expiresIn: '24h'
-    })
+    const token = 
 
-    res.send({ user, token })
+    res.send({ user, token: generateToken({ id: user.id }) })
 })

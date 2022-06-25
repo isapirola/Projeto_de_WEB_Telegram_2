@@ -41,8 +41,6 @@ router.post('/login', async (req, res) => {
     } 
     user.password = undefined
 
-    const token = 
-
     res.send({ user, token: generateToken({ id: user.id }) })
 })
 

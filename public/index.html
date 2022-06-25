@@ -37,6 +37,10 @@
         <div id="login_button">
           <p>Login</p>
         </div>
+
+        <div id="cadastrar_button">
+          <p>Cadastrar-se</p>
+        </div>
       </div>
 
     </div>
@@ -45,14 +49,32 @@
   <div class="flexbox_1">
 
     <div class="login_box">
+      
+      <p class="txtLoginBox">Realizar Login</p>
       <p class="txtLoginBox">E-mail</p>
       <input id="login_email" type="text">
       <p id="erro_email"></p>
       <p class="txtLoginBox">Senha</p>
       <input id="login_senha" type="text">
       <p id="erro_senha"></p>
+
       <button id="confirm">Confirmar</button>
+      <button id="cancel_login" class="cancel_button">Cancelar</button>
     </div>
+
+    <div class="cadastro_box">
+
+      <p class="txtCadastroBox">Realizar cadastro</p>
+      <p class="txtCadastroBox">E-mail</p>
+      <input id="cadastro_email" type="text">
+      <p id="erro_email_cadastro"></p>
+      <p class="txtCadastroBox">Senha</p>
+      <input id="cadastro_senha" type="text">
+      <p id="erro_senha_cadastro"></p>
+
+      <button id="confirm_cadastro">Confirmar</button>
+      <button id="cancel_cadastro" class="cancel_button">Cancelar</button>
+    </div>   
 
     <div class="container_do_meio">
       <div class="novidades_recentes">
@@ -103,6 +125,7 @@
     </div>
 
     <div class="container_busca">
+      <p class="charBoxTxt" style="font-size: 25px;">Procure um personagem</p>
 
       <p class="charBoxTxt">Digite o nome de um amiibo:</p>
       <input type="text" name="" placeholder="Digite o nome do personagem" id="input_api"/>
@@ -115,11 +138,19 @@
 
     </div>
 
+    <div class="container_upload_content">
+      <p class="charBoxTxt" style="font-size: 25px;">Adicione um personagem no banco de dados</p>
+      <p class="charBoxTxt">Digite o nome do personagem: </p>
+      <input type="text" id="upload_content_name"/>
+      <p class="charBoxTxt">Informe a URL de uma imagem: </p>
+      <input type="text" id="upload_content_url"/>
+      <br>
+      <button id="upload_content_button">PUBLICAR</button>
+    </div>
+
   </div>
 
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="script.js"></script>
-  
 </body>
 
 </html>

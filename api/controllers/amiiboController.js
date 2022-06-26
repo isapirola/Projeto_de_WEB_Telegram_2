@@ -26,7 +26,7 @@ router.get('/search', async (req, res) => {
     try {
         const amiibos = await Amiibo.find({ name })
 
-        if(Object.keys(amiibos).length === 0){
+        if(Object.keys(response.data).length === 0){
             return res.status(400).send({ error: 'Amiibo does not exist' });
         }
 

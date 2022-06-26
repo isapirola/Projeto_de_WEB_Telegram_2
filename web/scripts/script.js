@@ -2,14 +2,20 @@ var char_name_txt = document.querySelector('#char_name'),
     char_img = document.querySelector('#char_img'),
     request = new XMLHttpRequest(),
     buttonBuscarAPI = document.querySelector('#buscar_api'),
-    loginButton = document.querySelector('#login_button'),
-    confirmButton = document.querySelector('#confirm'),
     resultados_api = document.querySelector('#search_results'),
     isLogged = false;
 
-var cadastrarButton = document.querySelector('#cadastrar_button'),
-    cancelarLogin = document.querySelector('#cancel_login');
-    cancelarCadastro = document.querySelector('#cancel_cadastro');
+// Botões para chamar as caixas de login e de cadastro
+var loginButton = document.querySelector('#login_button'),
+    cadastrarButton = document.querySelector('#cadastrar_button');
+
+// Botões de confirmar login e cadastro
+var confirmLogin = document.querySelector('#loginConfirm'),
+    confirmCadastro = document.querySelector('#cadastroConfirm');
+
+// Botões de cancelar login e cadastro
+var cancelarLogin = document.querySelector('#loginCancel'),
+    cancelarCadastro = document.querySelector('#cadastroCancel');
 
 // Checa se o usuário já esta logado
 if(localStorage.getItem("login")){
@@ -40,7 +46,7 @@ cadastrarButton.addEventListener('click', () => {
   document.querySelector('.login_box').style.display = 'none';
 });
 
-// Botoões para cancelar o login ou o cadastro
+// Botões para cancelar o login ou o cadastro
 cancelarLogin.addEventListener('click', () => {
   document.querySelector('.login_box').style.display = 'none'; 
 })
@@ -48,12 +54,6 @@ cancelarLogin.addEventListener('click', () => {
 cancelarCadastro.addEventListener('click', () => {
   document.querySelector('.cadastro_box').style.display = 'none';
 })
-
-var confirmCadastro = document.getElementById('#confirm_cadastro');
-// function fazer_cadastro(auxNome, auxEmail, auxSenha){
-  confirmCadastro.addEventListener('click', () => {
-    alert("entrou no botão"); 
-  })
 
 // Função que realiza o login
 function fazer_login(auxEmail, auxSenha){
@@ -77,7 +77,9 @@ function fazer_login(auxEmail, auxSenha){
 }
 
 // Checa os inputs do usuário e senha e chama a função de login
-confirmButton.addEventListener('click', () => {
+confirmLogin.addEventListener('click', () => {
+  alert('voce clicou em login');
+  
   var loginEmail = document.querySelector('#login_email').value,
       loginSenha = document.querySelector('#login_senha').value,
       erroEmail = document.querySelector('#erro_email'),
@@ -96,32 +98,38 @@ confirmButton.addEventListener('click', () => {
     erroSenha.innerHTML = "";
     fazer_login(loginEmail, loginSenha);
   }
+  
 });
 
-// confirmButton_cadastro.addEventListener('click', () => {
-//   var cadastroNome = document.querySelector('#cadastro_nome').value,
-//       cadastroEmail = document.querySelector('#cadastro_email').value,
-//       cadastroSenha = document.querySelector('#cadastro_senha').value,
-//       erroEmail_cadastro = document.querySelector('#erro_email_cadastro'),
-//       erroSenha_cadastro = document.querySelector('#erro_senha_cadastro');
 
-//   if(cadastroEmail.length <= 3){
-//     erroEmail_cadastro.innerHTML = "O E-mail precisa ter no mínimo 3 caracteres!";
-//     erroSenha_cadastro.innerHTML = "";
+// Processa o clique no botão de confirmar cadastro e chama a função que faz cadastro
+confirmCadastro.addEventListener('click', () => {
+  alert('voce clicou em cadastrar');
+  
+  var cadastroNome = document.querySelector('#cadastro_nome').value,
+      cadastroEmail = document.querySelector('#cadastro_email').value,
+      cadastroSenha = document.querySelector('#cadastro_senha').value,
+      erroEmail_cadastro = document.querySelector('#erro_email_cadastro'),
+      erroSenha_cadastro = document.querySelector('#erro_senha_cadastro');
+
+  if(cadastroEmail.length <= 3){
+    erroEmail_cadastro.innerHTML = "O E-mail precisa ter no mínimo 3 caracteres!";
+    erroSenha_cadastro.innerHTML = "";
     
-//   } else if(cadastroSenha.length <= 3){
-//     erroEmail_cadastro.innerHTML = "";
-//     erroSenha_cadastro.innerHTML = "A senha precisa ter no mínimo 3 caracteres!";
+  } else if(cadastroSenha.length <= 3){
+    erroEmail_cadastro.innerHTML = "";
+    erroSenha_cadastro.innerHTML = "A senha precisa ter no mínimo 3 caracteres!";
 
-//   } else{
-//     erroEmail_cadastro.innerHTML = "";
-//     erroSenha_cadastro.innerHTML = "";
-//     fazer_cadastro(cadastroNome, cadastroEmail, cadastroSenha);
-//   }
-// });
+  } else{
+    erroEmail_cadastro.innerHTML = "";
+    erroSenha_cadastro.innerHTML = "";
+    fazer_cadastro(cadastroNome, cadastroEmail, cadastroSenha);
+  }
+  
+});
+
 
 // Realizar uma busca com base na API selecionada
-
 buttonBuscarAPI.addEventListener('click', () => {
   var input = document.querySelector('#input_api'),
       input_tamanho = document.querySelector('#input_api').value,

@@ -112,6 +112,7 @@
     background-color: #0088CC;
     display: none;
     align-self: center;
+    align-items: center;
     margin: 25px;
     padding: 25px;
     flex-direction: column;
@@ -123,6 +124,11 @@
     color: white;
     align-self: center;
     margin: 6px;
+  }
+
+  #erro_email{
+    color: white;
+    font-size: 13px;
   }
 
   #erro_senha{
@@ -188,6 +194,7 @@
     background-color: #0088CC;
     display: none;
     align-self: center;
+    align-items: center;
     margin: 25px;
     padding: 25px;
     flex-direction: column;

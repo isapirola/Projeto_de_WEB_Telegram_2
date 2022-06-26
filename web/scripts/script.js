@@ -1,3 +1,7 @@
+
+// SCRIPT ANTIGO COM TODAS AS COISAS
+
+/*
 var char_name_txt = document.querySelector('#char_name'),
     char_img = document.querySelector('#char_img'),
     request = new XMLHttpRequest(),
@@ -101,7 +105,6 @@ confirmLogin.addEventListener('click', () => {
   
 });
 
-
 // Processa o clique no botão de confirmar cadastro e chama a função que faz cadastro
 confirmCadastro.addEventListener('click', () => {
   alert('voce clicou em cadastrar');
@@ -127,7 +130,6 @@ confirmCadastro.addEventListener('click', () => {
   }
   
 });
-
 
 // Realizar uma busca com base na API selecionada
 buttonBuscarAPI.addEventListener('click', () => {
@@ -175,3 +177,4 @@ buttonBuscarAPI.addEventListener('click', () => {
     request.send()
   }
 });
+*/

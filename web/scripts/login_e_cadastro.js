@@ -60,8 +60,7 @@ function fazer_cadastro(auxNome, auxEmail, auxSenha){
 
 // Checa os inputs do usuário e senha e chama a função de login
 confirmLogin.addEventListener('click', () => {
-  alert('voce clicou em login');
-  
+   
   var loginEmail = document.querySelector('#login_email').value,
       loginSenha = document.querySelector('#login_senha').value,
       erroEmail = document.querySelector('#erro_email'),
@@ -85,7 +84,6 @@ confirmLogin.addEventListener('click', () => {
 
 // Processa o clique no botão de confirmar cadastro e chama a função que faz cadastro
 confirmCadastro.addEventListener('click', () => {
-  alert('voce clicou em cadastrar');
   
   var cadastroNome = document.querySelector('#cadastro_nome').value,
       cadastroEmail = document.querySelector('#cadastro_email').value,

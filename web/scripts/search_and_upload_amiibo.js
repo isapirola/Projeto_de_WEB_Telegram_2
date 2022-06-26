@@ -18,7 +18,7 @@ buttonBuscarAPI.addEventListener('click', () => {
     erroBusca.innerHTML = "A busca precisa ter no mínimo 3 caracteres!";
   } else{
     erroBusca.innerHTML = "";
-    request.open('GET', 'https://amiiboapi.com/api/amiibo/?name=' + charName, true)
+    request.open('GET', 'http://localhost:3000/amiibo/search/?name=' + charName, true)
 
     request.onreadystatechange = function () {
       if (request.readyState === 4 && request.status === 200) {

@@ -7,6 +7,7 @@ const AmiiboSchema = new mongoose.Schema({
   },
   imageURL: {
     type: String,
+    unique: true,
     required: true
   },
   createdAt: {

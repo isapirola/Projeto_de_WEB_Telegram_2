@@ -7,6 +7,9 @@ var char_name_txt = document.querySelector('#char_name'),
     resultados_api = document.querySelector('#search_results'),
     isLogged = false;
 
+var cadastrarButton = document.querySelector('#cadastrar_button'),
+    cancelarLogin = document.querySelector('#cancel_login');
+    cancelarCadastro = document.querySelector('#cancel_cadastro');
 
 // Checa se o usuário já esta logado
 if(localStorage.getItem("login")){
@@ -14,7 +17,6 @@ if(localStorage.getItem("login")){
   document.querySelector('#login_button').innerHTML = 'Logout';
   document.querySelector('.container_busca').style.display = 'flex';
 }
-
 
 // Processa o clique no botão de login
 loginButton.addEventListener('click', () => {
@@ -27,9 +29,25 @@ loginButton.addEventListener('click', () => {
     document.querySelector('#login_button').innerHTML = 'Login';
   } else {
     document.querySelector('.login_box').style.display = 'flex';
+    document.querySelector('.cadastro_box').style.display = 'none';
   }
 
 });
+
+// Abre o container com as opções para realizar o cadastro
+cadastrarButton.addEventListener('click', () => {
+  document.querySelector('.cadastro_box').style.display = 'flex';
+  document.querySelector('.login_box').style.display = 'none';
+});
+
+// Botoões para cancelar o login ou o cadastro
+cancelarLogin.addEventListener('click', () => {
+  document.querySelector('.login_box').style.display = 'none'; 
+})
+
+cancelarCadastro.addEventListener('click', () => {
+  document.querySelector('.cadastro_box').style.display = 'none';
+})
 
 // Função que realiza o login
 function fazer_login(auxEmail, auxSenha){

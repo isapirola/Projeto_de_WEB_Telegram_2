@@ -1,6 +1,7 @@
 import express from "express";
-import cookieSession from "cookie-session";
-import cors from "cors"
+import session from "express-session";
+import path from "path";
+import cors from "cors";
 import { router as authRouter } from "./controllers/authController.js";
 import { router as projectRouter } from "./controllers/projectController.js";
 import { router as amiiboRouter } from "./controllers/amiiboController.js";
@@ -15,10 +16,11 @@ app.use('/auth', authRouter)
 app.use('/projects', projectRouter)
 app.use('/amiibo', amiiboRouter)
 
-app.use(cookieSession({
-  name: 'session',
+app.use(session({
+  name: "session-id",
   secret: process.env.COOKIE_SECRET,
-  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  saveUninitialized: false,
+  resave: true
 }))
 
 const PORT = process.env.PORT || 8080;

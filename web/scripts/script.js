@@ -49,6 +49,12 @@ cancelarCadastro.addEventListener('click', () => {
   document.querySelector('.cadastro_box').style.display = 'none';
 })
 
+var confirmCadastro = document.getElementById('#confirm_cadastro');
+// function fazer_cadastro(auxNome, auxEmail, auxSenha){
+  confirmCadastro.addEventListener('click', () => {
+    alert("entrou no botão"); 
+  })
+
 // Função que realiza o login
 function fazer_login(auxEmail, auxSenha){
   var erro_no_login = document.querySelector('#erro_senha');
@@ -92,7 +98,30 @@ confirmButton.addEventListener('click', () => {
   }
 });
 
+// confirmButton_cadastro.addEventListener('click', () => {
+//   var cadastroNome = document.querySelector('#cadastro_nome').value,
+//       cadastroEmail = document.querySelector('#cadastro_email').value,
+//       cadastroSenha = document.querySelector('#cadastro_senha').value,
+//       erroEmail_cadastro = document.querySelector('#erro_email_cadastro'),
+//       erroSenha_cadastro = document.querySelector('#erro_senha_cadastro');
+
+//   if(cadastroEmail.length <= 3){
+//     erroEmail_cadastro.innerHTML = "O E-mail precisa ter no mínimo 3 caracteres!";
+//     erroSenha_cadastro.innerHTML = "";
+    
+//   } else if(cadastroSenha.length <= 3){
+//     erroEmail_cadastro.innerHTML = "";
+//     erroSenha_cadastro.innerHTML = "A senha precisa ter no mínimo 3 caracteres!";
+
+//   } else{
+//     erroEmail_cadastro.innerHTML = "";
+//     erroSenha_cadastro.innerHTML = "";
+//     fazer_cadastro(cadastroNome, cadastroEmail, cadastroSenha);
+//   }
+// });
+
 // Realizar uma busca com base na API selecionada
+
 buttonBuscarAPI.addEventListener('click', () => {
   var input = document.querySelector('#input_api'),
       input_tamanho = document.querySelector('#input_api').value,

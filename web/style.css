@@ -71,8 +71,6 @@
     padding-left: 0;
   }
 
-  /* Parte de login */
-  
   #login_button{
     background-color: white;
     width: 70px;
@@ -90,10 +88,31 @@
     cursor: pointer;
   }
 
+  #cadastrar_button{
+    background-color: white;
+    width: 120px;
+    height: 25px;
+    margin-left: 10px;
+    color: #0088CC;
+    border: 1px solid #8c8c8c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #cadastrar_button:hover{
+    background-color: #0088CC;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Parte de login */
+
   .login_box{
     background-color: #0088CC;
     display: none;
     align-self: center;
+    align-items: center;
     margin: 25px;
     padding: 25px;
     flex-direction: column;
@@ -105,6 +124,11 @@
     color: white;
     align-self: center;
     margin: 6px;
+  }
+
+  #erro_email{
+    color: white;
+    font-size: 13px;
   }
 
   #erro_senha{
@@ -125,30 +149,32 @@
     padding: 4px;
   }
 
-  #confirm{
-    font-size: 16px;
-    color: #0088CC; 
+  #loginConfirm{
+    background-color: white; 
     border-radius: 5px; 
-    font-weight: bold;
-    width: 150px;
     align-self: center; 
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
     margin-top: 10px;
+    margin-bottom: 10px;
   }
 
-  #confirm:hover{
+  #loginConfirm:hover{
     transform: scale(1.1);
     box-shadow: 4px 2px 2px black;
   }
 
   .cancel_button {
-    font-size: 16px;
-    color: #0088CC; 
+    background-color: white; 
     border-radius: 5px; 
-    font-weight: bold;
-    width: 150px;
     align-self: center; 
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
     margin-top: 10px;
-    margin-bottom: 10px;
   }
 
   .cancel_button:hover {
@@ -156,30 +182,19 @@
     box-shadow: 4px 2px 2px black;   
   }
 
-  /* Parte de cadastro */
-
-  #cadastrar_button{
-    background-color: white;
-    width: 120px;
-    height: 25px;
-    margin-left: 10px;
+  .txtButtonBox {
     color: #0088CC;
-    border: 1px solid #8c8c8c;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
   }
 
-  #cadastrar_button:hover{
-    background-color: #0088CC;
-    color: white;
-    cursor: pointer;
-  }
+  /* Parte de cadastro */
 
   .cadastro_box{
     background-color: #0088CC;
     display: none;
     align-self: center;
+    align-items: center;
     margin: 25px;
     padding: 25px;
     flex-direction: column;
@@ -193,17 +208,19 @@
     margin: 6px;
   }
 
-  #confirm_cadastro{
-    font-size: 16px;
-    color: #0088CC; 
+  #cadastroConfirm{
+    background-color: white; 
     border-radius: 5px; 
-    font-weight: bold;
-    width: 150px;
     align-self: center; 
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
     margin-top: 10px;
+    margin-bottom: 10px;
   }
 
-  #confirm_cadastro:hover{
+  #cadastroConfirm:hover{
     transform: scale(1.1);
     box-shadow: 4px 2px 2px black;
   }

@@ -162,6 +162,7 @@
   }
 
   #loginConfirm:hover{
+    cursor: pointer;
     transform: scale(1.1);
     box-shadow: 4px 2px 2px black;
   }
@@ -178,6 +179,7 @@
   }
 
   .cancel_button:hover {
+    cursor: pointer;
     transform: scale(1.1);
     box-shadow: 4px 2px 2px black;   
   }
@@ -221,6 +223,7 @@
   }
 
   #cadastroConfirm:hover{
+    cursor: pointer;
     transform: scale(1.1);
     box-shadow: 4px 2px 2px black;
   }

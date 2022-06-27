@@ -19,7 +19,7 @@ function fazer_login(auxEmail, auxSenha){
   var erro_no_login = document.querySelector('#erro_senha');
   erro_no_login.innerHTML = "";
 
-  axios.post('http://localhost:3000/auth/login',{
+  axios.post('https://amiibo-project-api.herokuapp.com/auth/login',{
     "email": auxEmail,
     "password": auxSenha
   })
@@ -41,7 +41,7 @@ function fazer_cadastro(auxNome, auxEmail, auxSenha){
   var erro_no_cadastro = document.querySelector('#erro_senha_cadastro');
   erro_no_cadastro.innerHTML = "";
 
-  axios.post('http://localhost:3000/auth/register',{
+  axios.post('https://amiibo-project-api.herokuapp.com/auth/register',{
     "name": auxNome,
     "email": auxEmail,
     "password": auxSenha

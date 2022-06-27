@@ -438,8 +438,22 @@
   }
 
   #buscar_api:hover{
+    cursor: pointer;
     transform: scale(1.1);
     box-shadow: 4px 2px 2px black;
+  }
+
+  #ref_cadastro_amiibo{
+    font-size: 12px;
+    color: white; 
+    background-color: transparent;
+    border: transparent;
+    font-weight: normal;
+    margin-top: 15px;
+  }
+
+  #ref_cadastro_amiibo{
+    cursor: pointer;
   }
 
   #search_results {

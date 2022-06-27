@@ -44,8 +44,7 @@ function fazer_cadastro(auxNome, auxEmail, auxSenha){
   axios.post('http://localhost:3000/auth/register',{
     "name": auxNome,
     "email": auxEmail,
-    "password": auxSenha,
-    "admin": false
+    "password": auxSenha
   })
   .then( function (res) {
     isLogged = true;

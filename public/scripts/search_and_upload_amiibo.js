@@ -3,12 +3,18 @@ var char_name_txt = document.querySelector('#char_name'),
     request = new XMLHttpRequest(),
     buttonBuscarAPI = document.querySelector('#buscar_api'),
     resultados_api = document.querySelector('#search_results'),
-    buttonRefCadastro = document.querySelector('#ref_cadastro_amiibo');
-    buttonCadastroAmiibo = document.querySelector('#upload_content_button')
+    buttonRefCadastro = document.querySelector('#ref_cadastro_amiibo'),
+    buttonRefBusca = document.querySelector('#ref_busca_amiibo'),
+    buttonCadastroAmiibo = document.querySelector('#upload_content_button');
    
 buttonRefCadastro.addEventListener('click', () => {
   document.querySelector('.container_busca').style.display = 'none';
   document.querySelector('.container_upload_content').style.display = 'flex';
+})
+
+buttonRefBusca.addEventListener('click', () => {
+  document.querySelector('.container_busca').style.display = 'flex';
+  document.querySelector('.container_upload_content').style.display = 'none';
 })
 
 // Adicionar um novo amiibo no banco de dados

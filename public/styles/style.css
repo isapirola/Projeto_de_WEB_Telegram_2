@@ -452,7 +452,20 @@
     margin-top: 15px;
   }
 
-  #ref_cadastro_amiibo{
+  #ref_cadastro_amiibo:hover{
+    cursor: pointer;
+  }
+
+  #ref_busca_amiibo{
+    font-size: 12px;
+    color: white; 
+    background-color: transparent;
+    border: transparent;
+    font-weight: normal;
+    margin-top: 15px;
+  }
+
+  #ref_busca_amiibo:hover{
     cursor: pointer;
   }
 

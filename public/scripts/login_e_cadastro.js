@@ -27,6 +27,7 @@ function fazer_login(auxEmail, auxSenha){
     isLogged = true;
     document.querySelector('.container_busca').style.display = 'flex';
     document.querySelector('#login_button').innerHTML = 'Logout';
+    document.querySelector('.login_box').style.display = 'none'; 
 
     localStorage.setItem("login", isLogged);
   })
@@ -50,6 +51,7 @@ function fazer_cadastro(auxNome, auxEmail, auxSenha){
     isLogged = true;
     document.querySelector('.container_busca').style.display = 'flex';
     document.querySelector('#login_button').innerHTML = 'Logout';
+    document.querySelector('.cadastro_box').style.display = 'none';
 
     localStorage.setItem("login", isLogged);
   })

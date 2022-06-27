@@ -6,7 +6,7 @@ import { router as authRouter } from "./controllers/authController.js";
 import { router as projectRouter } from "./controllers/projectController.js";
 import { router as amiiboRouter } from "./controllers/amiiboController.js";
 
-const app = express()
+export const app = express()
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))

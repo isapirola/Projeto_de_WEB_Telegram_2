@@ -18,6 +18,7 @@ loginButton.addEventListener('click', () => {
     localStorage.removeItem("login");
     isLogged=false;
     document.querySelector('.container_busca').style.display = 'none';
+    document.querySelector('.container_upload_content').style.display = 'none';
     document.querySelector('.login_box').style.display = 'none';
     document.querySelector('#login_button').innerHTML = 'Login';
   } else {

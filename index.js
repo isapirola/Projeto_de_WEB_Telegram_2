@@ -6,6 +6,8 @@ import { router as authRouter } from "./controllers/authController.js";
 import { router as projectRouter } from "./controllers/projectController.js";
 import { router as amiiboRouter } from "./controllers/amiiboController.js";
 
+const __dirname = path.resolve();
+
 export const app = express()
 
 app.use(express.json());
@@ -22,6 +24,12 @@ app.use(session({
   saveUninitialized: false,
   resave: true
 }))
+
+app.use(express.static('public'));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname + '/public'));
+});
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

@@ -14,6 +14,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
+app.use(express.static('public'));
+
 app.use('/auth', authRouter)
 app.use('/projects', projectRouter)
 app.use('/amiibo', amiiboRouter)
@@ -24,12 +26,6 @@ app.use(session({
   saveUninitialized: false,
   resave: true
 }))
-
-app.use(express.static('public'));
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/public'));
-});
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

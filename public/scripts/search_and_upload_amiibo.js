@@ -38,6 +38,7 @@ buttonBuscarAPI.addEventListener('click', async () => {
       input_tamanho = document.querySelector('#input_api').value,
       erroBusca = document.querySelector('#erro_busca'),
       charName = input.value;
+      console.log(charName)
 
   resultados_api.innerHTML = "";
   erroBusca.innerHTML = " ";
@@ -47,32 +48,21 @@ buttonBuscarAPI.addEventListener('click', async () => {
   } else{
     erroBusca.innerHTML = "";
 
-    request.open('GET', 'https://amiibo-project-api.herokuapp.com/amiibo/search:' + charName, true)
+    let response = await axios.get((`https://amiibo-project-api.herokuapp.com/amiibo/search:${charName}`))
+    console.log(response);
 
-    request.onreadystatechange = function () {
-      if (request.readyState === 4 && request.status === 200) {
-        let resposta = JSON.parse(request.responseText);
-        let resposta_tamanho = resposta.amiibo.length;
+    for(let i = 0 ; i < response.data.length; i++){
+      var img_amiibo = document.createElement('img');
+      
+      img_amiibo.src = response.data[i].imageURL;
 
-        for( var i = 0; i < resposta_tamanho; i++){
-          var img_amiibo = document.createElement('img');
-          img_amiibo.src = resposta.amiibo[i].image;
+      img_amiibo.style.borderBottom = '3px solid white';
+      img_amiibo.style.paddingTop = '15px';
+      img_amiibo.style.paddingBottom = '15px';
+      img_amiibo.style.width = '300px';
 
-          nome_amiibo.style.color = 'white';
-          nome_amiibo.style.fontSize = '20px';
-          nome_amiibo.style.fontFamily = 'Lucida Grande, Lucida Sans Unicode, Arial, Helvetica, Verdana, sans-serif';
-          nome_amiibo.style.textAlign = 'center';
-          nome_amiibo.style.margin = '20px';
-
-          img_amiibo.style.borderBottom = '3px solid white';
-          img_amiibo.style.paddingBottom = '15px';
-
-          resultados_api.appendChild(nome_amiibo);
-          resultados_api.appendChild(img_amiibo);
-        };
-
-      } 
-    }  
-    request.send()
+      resultados_api.appendChild(img_amiibo);
+    }
   }
 });
+  

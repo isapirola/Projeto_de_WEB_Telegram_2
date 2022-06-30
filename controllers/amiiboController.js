@@ -20,11 +20,12 @@ router.post('/post', async (req, res) => {
     }
 })
 
-router.get('/search', async (req, res) => {
-    const { name } = req.body
+router.get('/search:Amiibo', async (req, res) => {
+    const par = req.params.Amiibo
+    const [sep, name] = par.split(':')
 
     try {
-        const amiibos = await Amiibo.find({ name })
+        const amiibos = await Amiibo.find({ name: name })
 
         if(Object.keys(amiibos).length === 0){
             return res.status(400).send({ error: 'Amiibo does not exist' });

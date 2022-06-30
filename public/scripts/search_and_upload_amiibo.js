@@ -33,7 +33,7 @@ buttonCadastroAmiibo.addEventListener('click', () => {
 })
 
 // Realizar uma busca com base na API selecionada
-buttonBuscarAPI.addEventListener('click', () => {
+buttonBuscarAPI.addEventListener('click', async () => {
   var input = document.querySelector('#input_api'),
       input_tamanho = document.querySelector('#input_api').value,
       erroBusca = document.querySelector('#erro_busca'),
@@ -46,7 +46,8 @@ buttonBuscarAPI.addEventListener('click', () => {
     erroBusca.innerHTML = "A busca precisa ter no mínimo 3 caracteres!";
   } else{
     erroBusca.innerHTML = "";
-    request.open('GET', 'https://amiibo-project-api.herokuapp.com/amiibo/search' + charName, true)
+
+    request.open('GET', 'https://amiibo-project-api.herokuapp.com/amiibo/search:' + charName, true)
 
     request.onreadystatechange = function () {
       if (request.readyState === 4 && request.status === 200) {
@@ -54,10 +55,7 @@ buttonBuscarAPI.addEventListener('click', () => {
         let resposta_tamanho = resposta.amiibo.length;
 
         for( var i = 0; i < resposta_tamanho; i++){
-          var nome_amiibo = document.createElement('p'),
-              img_amiibo = document.createElement('img');
-
-          nome_amiibo.innerHTML = resposta.amiibo[i].character;
+          var img_amiibo = document.createElement('img');
           img_amiibo.src = resposta.amiibo[i].image;
 
           nome_amiibo.style.color = 'white';
